@@ -1,0 +1,19 @@
+<h2>Pokemons</h2>
+<div>
+  <label for="new-pokemon">Pokemon name: </label>
+  <input id="new-pokemon" #pokemonName />
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button type="button" class="add-button" (click)="add(pokemonName.value); pokemonName.value=''">
+    Add pokemon
+  </button>
+</div>
+<ul class="pokemon">
+  <li *ngFor="let pokemon of pokemon">
+  	<a routerLink="/detail/{{pokemon.id}}">
+      <span class="badge">{{pokemon.id}}</span> {{pokemon.name}}
+    </a>
+  </li>
+</ul>
+
+
